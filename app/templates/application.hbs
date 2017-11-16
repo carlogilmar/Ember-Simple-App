@@ -1,5 +1,8 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#link-to 'index'}}<h2 id="title">Welcome to Ember</h2>{{/link-to}}
 
-{{outlet}}
+  {{outlet}}
+
+  {{#each model as |book|}}
+    <br>
+    title: {{#link-to 'books' book.id}}{{book.title}}{{/link-to}}<br>
+  {{/each}}
